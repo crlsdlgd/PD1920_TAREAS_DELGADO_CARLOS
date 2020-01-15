@@ -1,0 +1,31 @@
+buildscript {
+	repositories {
+		maven {
+			url "https://plugins.gradle.org/m2/"
+		}
+	}
+	dependencies {
+		classpath "gradle.plugin.fish.payara.gradle.plugins:payara-micro-gradle-plugin:1.0.3"
+	}
+}
+
+apply plugin: "fish.payara.micro-gradle-plugin"
+apply plugin: "war"
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+	compile group: 'javax', name: 'javaee-api', version: '8.0.1'
+
+}
+
+payaraMicro {
+    payaraVersion = '5.194'
+    deployWar = false
+    useUberJar = true
+    daemon = false
+    commandLineOptions = [port: 50002]
+    javaCommandLineOptions = [Dtest: 'test123', ea:true]
+}
