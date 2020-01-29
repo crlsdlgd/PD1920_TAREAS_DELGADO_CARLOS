@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Application-Class: io.helidon.microprofile.server.Main
+Premain-Class: Capsule
+Main-Class: Capsule
+

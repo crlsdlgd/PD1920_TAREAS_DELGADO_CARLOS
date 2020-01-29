@@ -1,0 +1,14 @@
+plugins {
+    id 'java-library'
+ 
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	
+	compile group: 'com.ecwid.consul', name: 'consul-api', version: '1.4.4'
+
+}
